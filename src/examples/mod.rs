@@ -7,3 +7,6 @@ pub mod list;
 pub mod variable_binding;
 pub mod variable_types;
 pub mod conversion;
+pub mod expression;
+pub mod flow_control;
+pub mod match_test;

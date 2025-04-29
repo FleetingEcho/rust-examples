@@ -9,5 +9,8 @@ fn main() {
     // examples::primitives::test();
     // examples::structs::test();
     // examples::variable_binding::test();
-    examples::conversion::test();
+    // examples::conversion::test();
+    // examples::expression::test();
+    // examples::flow_control::test();
+    examples::match_test::test();
 }
