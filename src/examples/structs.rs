@@ -43,11 +43,11 @@ pub fn test() {
     // 访问点的字段
     println!("点的坐标：({}, {})", point.x, point.y);
 
-    // 使用结构体更新语法创建新的点，
+    // 使用结构体更新语法创建新的点,
     // 复用之前创建的点的字段
     let bottom_right = Point { x: 10.3, ..another_point };
 
-    // `bottom_right.y` 与 `another_point.y` 相同，
+    // `bottom_right.y` 与 `another_point.y` 相同,
     // 因为我们使用了 `another_point` 的该字段
     println!("第二个点：({}, {})", bottom_right.x, bottom_right.y);
 
@@ -84,10 +84,10 @@ pub fn test() {
 // `PageLoad != PageUnload` 且 `KeyPress(char) != Paste(String)`。
 // 每个变体都是不同且独立的。
 enum WebEvent {
-    // `enum` 变体可以类似单元结构体（`unit-like`），
+    // `enum` 变体可以类似单元结构体（`unit-like`）,
     PageLoad,
     PageUnload,
-    // 类似元组结构体，
+    // 类似元组结构体,
     KeyPress(char),
     Paste(String),
     // 或类似 C 语言的结构体。
@@ -152,7 +152,7 @@ enum Color {
 }
 
 fn use_test() {
-    // 显式 `use` 每个名称，使它们可以不需要
+    // 显式 `use` 每个名称,使它们可以不需要
     // 手动作用域限定就能使用。
     use crate::examples::structs::Stage::{Beginner, Advanced};
     // 自动 `use` `Role` 内的每个名称。
@@ -164,7 +164,7 @@ fn use_test() {
     let role = Student;
 
     match stage {
-        // 注意由于上面的显式 `use`，这里不需要作用域限定。
+        // 注意由于上面的显式 `use`,这里不需要作用域限定。
         Beginner => println!("初学者正在开始他们的学习之旅！"),
         Advanced => println!("高级学习者正在掌握他们的科目..."),
     }

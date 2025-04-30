@@ -9,12 +9,12 @@ struct City {
 }
 
 impl Display for City {
-    // `f` 是一个缓冲区，此方法必须将格式化的字符串写入其中。
+    // `f` 是一个缓冲区,此方法必须将格式化的字符串写入其中。
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
 
-        // `write!` 类似于 `format!`，但它会将格式化后的字符串
+        // `write!` 类似于 `format!`,但它会将格式化后的字符串
         // 写入一个缓冲区（第一个参数）。
         write!(f, "{}: {:.3}°{} {:.3}°{}",
                self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
@@ -41,7 +41,7 @@ pub fn test_print1() {
         Color { red: 0, green: 3, blue: 254 },
         Color { red: 0, green: 0, blue: 0 },
     ] {
-        // 一旦你为 fmt::Display 添加了实现，就把这里改成使用 {}。
+        // 一旦你为 fmt::Display 添加了实现,就把这里改成使用 {}。
         println!("{:?}", color);
     }
 }
@@ -49,14 +49,14 @@ pub fn test_print1() {
 
 pub fn test() {
     test_print1();
-    // 通常，`{}` 会被自动替换为任何参数。
+    // 通常,`{}` 会被自动替换为任何参数。
     // 这些参数会被转换为字符串。
     println!("{} 天", 31);
 
     // 可以使用位置参数。在 `{}` 中指定一个整数
     // 来决定替换哪个额外的参数。参数编号
-    // 从格式字符串后立即开始，从 0 开始。
-    println!("{0}，这是 {1}。{1}，这是 {0}", "Alice", "Bob");
+    // 从格式字符串后立即开始,从 0 开始。
+    println!("{0},这是 {1}。{1},这是 {0}", "Alice", "Bob");
 
     // 还可以使用命名参数。
     println!("{subject} {verb} {object}",
@@ -64,7 +64,7 @@ pub fn test() {
              subject="那只敏捷的棕色狐狸",
              verb="跳过");
 
-    // 在 `:` 后指定格式字符，
+    // 在 `:` 后指定格式字符,
     // 可以调用不同的格式化方式。
     println!("十进制：               {}",   69420); // 69420
     println!("二进制：               {:b}", 69420); // 10000111100101100
@@ -72,10 +72,10 @@ pub fn test() {
     println!("十六进制：             {:x}", 69420); // 10f2c
 
     // 可以指定宽度来右对齐文本。这将输出
-    // "    1"。（四个空格和一个 "1"，总宽度为 5。）
+    // "    1"。（四个空格和一个 "1",总宽度为 5。）
     println!("{number:>5}", number=1);
 
-    // 可以用额外的零来填充数字，
+    // 可以用额外的零来填充数字,
     println!("{number:0>5}", number=1); // 00001
     // 通过翻转符号来左对齐。这将输出 "10000"。
     println!("{number:0<5}", number=1); // 10000
@@ -90,15 +90,15 @@ pub fn test() {
     // 只有实现了 fmt::Display 的类型才能用 `{}` 格式化。
     // 用户定义的类型默认不实现 fmt::Display。
 
-    #[allow(dead_code)] // 禁用 `dead_code`，它会警告未使用的模块
+    #[allow(dead_code)] // 禁用 `dead_code`,它会警告未使用的模块
     struct Structure(i32);
 
-    // 这无法编译，因为 `Structure` 没有实现 fmt::Display。
+    // 这无法编译,因为 `Structure` 没有实现 fmt::Display。
     // println!("这个结构体 `{}` 无法打印...", Structure(3));
     // TODO ^ 尝试取消注释这一行
 
-    // 在 Rust 1.58 及以上版本，你可以直接从周围的变量捕获参数。
-    // 就像上面一样，这将输出 "    1"，4 个空格和一个 "1"。
+    // 在 Rust 1.58 及以上版本,你可以直接从周围的变量捕获参数。
+    // 就像上面一样,这将输出 "    1",4 个空格和一个 "1"。
     let number: f64 = 1.0;
     let width: usize = 5;
     println!("{number:>width$}"); // 1

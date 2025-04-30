@@ -12,12 +12,12 @@ pub fn test() {
     }
 
     let big_n = if n < 10 && n > -10 {
-        println!("，是一个小数字，扩大十倍");
+        println!(",是一个小数字,扩大十倍");
 
         // 这个表达式返回 `i32` 类型。
         10 * n
     } else {
-        println!("，是一个大数字，将数字减半");
+        println!(",是一个大数字,将数字减半");
 
         // 这个表达式也必须返回 `i32` 类型。
         n / 2
@@ -51,7 +51,7 @@ fn test1() {
         println!("{}", count);
 
         if count == 5 {
-            println!("好了，够了");
+            println!("好了,够了");
 
             // 退出这个循环
             break;
@@ -144,7 +144,7 @@ fn test5() {
 fn test6() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
-    //iter - 在每次迭代中借用集合的每个元素。因此，集合保持不变，并且在循环之后可以重复使用。
+    //iter - 在每次迭代中借用集合的每个元素。因此,集合保持不变,并且在循环之后可以重复使用。
     for name in names.iter() {
         match name {
             &"Ferris" => println!("我们中间有一个 Rustacean！"),
@@ -155,7 +155,7 @@ fn test6() {
 
     println!("names: {:?}", names);
 
-    //into_iter - 这会消耗集合，使得在每次迭代中提供确切的数据。一旦集合被消耗，它就不再可用于重复使用，因为它已经在循环中被"移动"了。
+    //into_iter - 这会消耗集合,使得在每次迭代中提供确切的数据。一旦集合被消耗,它就不再可用于重复使用,因为它已经在循环中被"移动"了。
     {
         let names = vec!["Bob", "Frank", "Ferris"];
 
@@ -224,19 +224,19 @@ fn test8() {
     // 创建 `Option<i32>` 类型的 `optional`
     let mut optional = Some(0);
 
-    // 这段代码的含义是：当 `let` 将 `optional` 解构为 `Some(i)` 时，
-    // 执行代码块 `{}`，否则 `break`。
+    // 这段代码的含义是：当 `let` 将 `optional` 解构为 `Some(i)` 时,
+    // 执行代码块 `{}`,否则 `break`。
     while let Some(i) = optional {
         if i > 9 {
-            println!("大于 9，退出！");
+            println!("大于 9,退出！");
             optional = None;
         } else {
             println!("`i` 是 `{:?}`。再试一次。", i);
             optional = Some(i + 1);
         }
-        // ^ 减少了代码缩进右移，无需显式处理失败情况
+        // ^ 减少了代码缩进右移,无需显式处理失败情况
     }
-    // ^ `if let` 可以有额外的 `else`/`else if` 子句，`while let` 则没有。
+    // ^ `if let` 可以有额外的 `else`/`else if` 子句,`while let` 则没有。
 }
 
 
@@ -249,12 +249,12 @@ fn test9() {
     let emoticon: Option<i32> = None;
 
     // `if let` 结构的含义是：如果 `let` 能将 `number` 解构为
-    // `Some(i)`，则执行代码块（`{}`）。
+    // `Some(i)`,则执行代码块（`{}`）。
     if let Some(i) = number {
         println!("匹配到 {:?}！", i);
     }
 
-    // 如果需要指定匹配失败的情况，可以使用 else：
+    // 如果需要指定匹配失败的情况,可以使用 else：
     if let Some(i) = letter {
         println!("匹配到 {:?}！", i);
     } else {
@@ -267,7 +267,7 @@ fn test9() {
 
     if let Some(i) = emoticon {
         println!("匹配到 {:?}！", i);
-    // 解构失败。评估 `else if` 条件，看是否应该执行替代的失败分支：
+    // 解构失败。评估 `else if` 条件,看是否应该执行替代的失败分支：
     } else if i_like_letters {
         println!("没有匹配到数字。那就用一个字母吧！");
     } else {
@@ -301,7 +301,7 @@ fn test10() {
         println!("b 是 foobar");
     }
 
-    // 变量 c 匹配 Foo::Qux，它包含一个值
+    // 变量 c 匹配 Foo::Qux,它包含一个值
     // 类似于前面例子中的 Some()
     if let Foo::Qux(value) = c {
         println!("c 是 {}", value);

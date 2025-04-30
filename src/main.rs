@@ -12,5 +12,6 @@ fn main() {
     // examples::conversion::test();
     // examples::expression::test();
     // examples::flow_control::test();
-    examples::match_test::test();
+    // examples::match_test::test();
+    examples::test_function::test();
 }
