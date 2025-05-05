@@ -11,3 +11,6 @@ pub mod expression;
 pub mod flow_control;
 pub mod match_test;
 pub mod test_function;
+pub mod closures;
+pub mod test_mod;
+pub mod struct_visit;
